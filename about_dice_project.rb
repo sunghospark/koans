@@ -3,14 +3,16 @@
 # Implement a DiceSet Class here:
 #
 class DiceSet
-  @@basic_dice = [1, 2, 3, 4, 5, 6]
-  attr_reader :values
+  def initialize
+    @@basic_dice = [1, 2, 3, 4, 5, 6]
+    @values = []
+  end
+  attr_accessor :values
   def roll( x = 1 )    
-    values = []
     x.times do
-      values << @@basic_dice.sample
+      @values.push(@@basic_dice.sample)
     end
-    return values
+    return @values
   end
 end
 
